@@ -2,35 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { fullName, email, subject, message } = formData;
-    if (!fullName || !email || !subject || !message) {
-      setError('Todos los campos son obligatorios.');
-      setSuccess('');
-      return;
-    }
-    setError('');
-    setSuccess('Mensaje enviado con éxito.');
-    setFormData({ fullName: '', email: '', subject: '', message: '' });
-  };
-
+ 
   return (
     <div className="App">
       <div className="form-container">
